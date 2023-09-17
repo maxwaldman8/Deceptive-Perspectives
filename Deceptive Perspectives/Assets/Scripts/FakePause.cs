@@ -1,27 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FakePause : MonoBehaviour
 {
 
-    private bool pausedYet = false;
+    private bool paused = false;
     private bool unpausedYet = false;
 
     [field: SerializeField]
     private GameObject FakePauseMenuObj;
+    [field: SerializeField]
+    private GameObject MenuButton;
     
     void Update(){
-        if (Input.GetKeyDown(KeyCode.Escape) && !pausedYet){
+        if (Input.GetKeyDown(KeyCode.Escape) && !paused && !unpausedYet){
             FakePauseMenu();
         }
-        if (pausedYet && !unpausedYet && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.Space))){
+        if (paused && !unpausedYet && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.Space))){
             UnlockControls();
         }
     }
 
     void FakePauseMenu(){
-        pausedYet = true;
+        paused = true;
         transform.position = new Vector3(0,0,0);
         transform.localRotation = Quaternion.Euler(0,0,0);
         transform.GetChild(0).GetComponent<Camera>().transform.localRotation = Quaternion.Euler(0,0,0);
@@ -31,7 +31,7 @@ public class FakePause : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         FakePauseMenuObj.SetActive(true);
-        //disable inventory
+        //disable inventory and ui
     }
 
     void UnlockControls(){
@@ -40,7 +40,8 @@ public class FakePause : MonoBehaviour
         transform.GetChild(0).GetComponent<Camera>().orthographic = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        //enable inventory
+        MenuButton.GetComponent<InteractableObject>().active = true;
+        //enable inventory and ui
     }
 
 }
