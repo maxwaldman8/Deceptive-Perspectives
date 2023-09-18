@@ -10,6 +10,8 @@ public class FakePause : MonoBehaviour
     private GameObject FakePauseMenuObj;
     [field: SerializeField]
     private GameObject MenuButton;
+    [field: SerializeField]
+    private GameObject PauseButton;
     
     void Update(){
         if (Input.GetKeyDown(KeyCode.Escape) && !paused && !unpausedYet){
@@ -41,6 +43,16 @@ public class FakePause : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         MenuButton.GetComponent<InteractableObject>().active = true;
+        //enable inventory and ui
+    }
+
+    public void Unpause(){
+        paused = false;
+        transform.GetChild(0).GetComponent<CameraFollow>().enabled = true;
+        transform.GetChild(0).GetComponent<Camera>().orthographic = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        FakePauseMenuObj.SetActive(false);
         //enable inventory and ui
     }
 
