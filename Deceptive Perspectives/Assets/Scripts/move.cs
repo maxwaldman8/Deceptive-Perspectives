@@ -17,8 +17,8 @@ public class move : MonoBehaviour
 
     void FixedUpdate()
     {
-        float inputX = Input.GetAxis("Horizontal");
-        float inputZ = Input.GetAxis("Vertical");
+        float inputX = Input.GetAxisRaw("Horizontal");
+        float inputZ = Input.GetAxisRaw("Vertical");
 
         grounded = Physics.Raycast(transform.position, -1 * transform.up, 1.1f, ground);
 

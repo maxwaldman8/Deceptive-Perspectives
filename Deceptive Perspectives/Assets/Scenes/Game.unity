@@ -184,7 +184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7933784084494514838, guid: cf231b89d18354ce3ae9fe724e09f62b, type: 3}
       propertyPath: speed
-      value: 25
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7933784084494514838, guid: cf231b89d18354ce3ae9fe724e09f62b, type: 3}
       propertyPath: JumpMult
@@ -193,7 +193,7 @@ PrefabInstance:
     - target: {fileID: 7933784084494514839, guid: cf231b89d18354ce3ae9fe724e09f62b, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 13400000, guid: 9d8e7145eaa4441da87d545a84e8e7a2, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 7933784084494514846, guid: cf231b89d18354ce3ae9fe724e09f62b, type: 3}
       propertyPath: m_Name
       value: Player
@@ -201,6 +201,10 @@ PrefabInstance:
     - target: {fileID: 7933784084494514857, guid: cf231b89d18354ce3ae9fe724e09f62b, type: 3}
       propertyPath: m_Drag
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933784084494514857, guid: cf231b89d18354ce3ae9fe724e09f62b, type: 3}
+      propertyPath: m_Mass
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7933784086523305755, guid: cf231b89d18354ce3ae9fe724e09f62b, type: 3}
       propertyPath: m_HDR
@@ -248,7 +252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7933784086523305757, guid: cf231b89d18354ce3ae9fe724e09f62b, type: 3}
       propertyPath: mouseSensitivity
-      value: 5000
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf231b89d18354ce3ae9fe724e09f62b, type: 3}
