@@ -4,13 +4,8 @@ public class CameraFollow : MonoBehaviour
 {
 
     public float mouseSensitivity = 500f;
-    float xRotation;
+    float xRotation = 0f;
     public GameObject playerObj;
-
-    void OnEnable()
-    {
-        xRotation = 0f;
-    }
 
     void Update()
     {

@@ -6,6 +6,11 @@ public class FakePause : MonoBehaviour
     private bool paused = false;
     private bool unpausedYet = false;
 
+    private Vector3 prevPos;
+    private Quaternion prevRot;
+    private Vector3 prevVel;
+    private Quaternion prevCRot;
+
     [field: SerializeField]
     private GameObject FakePauseMenuObj;
     [field: SerializeField]
@@ -24,9 +29,13 @@ public class FakePause : MonoBehaviour
 
     void FakePauseMenu(){
         paused = true;
+        prevPos = transform.position;
+        prevRot = transform.localRotation;
+        prevVel = GetComponent<Rigidbody>().velocity;
+        prevCRot = transform.GetChild(0).localRotation;
         transform.position = new Vector3(0,0,0);
         transform.localRotation = Quaternion.Euler(0,0,0);
-        transform.GetChild(0).GetComponent<Camera>().transform.localRotation = Quaternion.Euler(0,0,0);
+        transform.GetChild(0).transform.localRotation = Quaternion.Euler(0,0,0);
         GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
         transform.GetChild(0).GetComponent<Camera>().orthographic = true;
         transform.GetChild(0).GetComponent<CameraFollow>().enabled = false;
@@ -49,6 +58,10 @@ public class FakePause : MonoBehaviour
 
     public void Unpause(){
         paused = false;
+        transform.position = prevPos;
+        transform.localRotation = prevRot;
+        GetComponent<Rigidbody>().velocity = prevVel;
+        transform.GetChild(0).localRotation = prevCRot;
         transform.GetChild(0).GetComponent<CameraFollow>().enabled = true;
         transform.GetChild(0).GetComponent<Camera>().orthographic = false;
         Cursor.lockState = CursorLockMode.Locked;
