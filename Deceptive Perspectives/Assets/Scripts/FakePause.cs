@@ -49,6 +49,7 @@ public class FakePause : MonoBehaviour
         unpausedYet = true;
         transform.position = new Vector3(0,0,2.225f);
         transform.GetChild(0).GetComponent<CameraFollow>().enabled = true;
+        transform.GetChild(0).GetComponent<CameraFollow>().xRotation = 0;
         transform.GetChild(0).GetComponent<Camera>().orthographic = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
