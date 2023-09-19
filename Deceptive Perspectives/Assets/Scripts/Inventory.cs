@@ -28,7 +28,7 @@ public class Inventory : MonoBehaviour
     void Update()
     {
         switch (currentItem){
-            case "Empty":
+            case "":
                 image.sprite = Empty;
                 break;
             case "Key":
@@ -45,5 +45,20 @@ public class Inventory : MonoBehaviour
                 break;
         }
     }
+
+    public void SetItem(string item)
+    {
+        currentItem = item;
+    }
+
+    public void MoveItem(ItemHolder itemHolder)
+    {
+        string result = itemHolder.Interact(currentItem);
+        if (result != "Failed"){
+            currentItem = result;
+        }
+    }
+
+    // public void UseItem()
 
 }

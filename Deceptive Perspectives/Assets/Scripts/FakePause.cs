@@ -4,7 +4,7 @@ public class FakePause : MonoBehaviour
 {
 
     private bool paused = false;
-    private bool unpausedYet = false;
+    public bool unpausedYet = false;
 
     private Vector3 prevPos;
     private Quaternion prevRot;
