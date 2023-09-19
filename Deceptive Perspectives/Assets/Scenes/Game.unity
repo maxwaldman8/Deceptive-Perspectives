@@ -277,7 +277,6 @@ MonoBehaviour:
   MenuButton: {fileID: 1793977440}
   PauseButton: {fileID: 697264903}
   overlay: {fileID: 1242856098}
-  crosshair: {fileID: 450806803}
 --- !u!1 &106419122
 GameObject:
   m_ObjectHideFlags: 0
@@ -1112,14 +1111,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.5019608, b: 0.5019608, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 15a704b9325a645ddb7e7b574eba7d34, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 24baeda45c79162469eccabe68d341a7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
