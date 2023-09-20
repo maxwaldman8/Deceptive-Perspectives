@@ -41,6 +41,8 @@ public class FakePause : MonoBehaviour
         GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
         transform.GetChild(0).GetComponent<Camera>().orthographic = true;
         transform.GetChild(0).GetComponent<CameraFollow>().enabled = false;
+        PauseButton.transform.GetChild(0).gameObject.SetActive(true);
+        MenuButton.transform.GetChild(0).gameObject.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         FakePauseMenuObj.SetActive(true);
@@ -55,6 +57,8 @@ public class FakePause : MonoBehaviour
         transform.GetChild(0).GetComponent<CameraFollow>().xRotation = 0;
         transform.GetChild(0).GetComponent<Camera>().orthographic = false;
         Cursor.lockState = CursorLockMode.Locked;
+        PauseButton.transform.GetChild(0).gameObject.SetActive(false);
+        MenuButton.transform.GetChild(0).gameObject.SetActive(false);
         Cursor.visible = false;
         MenuButton.GetComponent<InteractableObject>().active = true;
         overlay.SetActive(true);
@@ -69,6 +73,8 @@ public class FakePause : MonoBehaviour
         transform.GetChild(0).localRotation = prevCRot;
         transform.GetChild(0).GetComponent<CameraFollow>().enabled = true;
         transform.GetChild(0).GetComponent<Camera>().orthographic = false;
+        PauseButton.transform.GetChild(0).gameObject.SetActive(false);
+        MenuButton.transform.GetChild(0).gameObject.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         FakePauseMenuObj.SetActive(false);
