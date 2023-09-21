@@ -4,6 +4,8 @@ public class FakePause : MonoBehaviour
 {
 
     private bool paused = false;
+    private float delayTime = 1f;
+    private float delay = 0f;
     public bool unpausedYet = false;
 
     private Vector3 prevPos;
@@ -21,10 +23,18 @@ public class FakePause : MonoBehaviour
     private GameObject overlay;
     
     void Update(){
+        if (paused && delay <= delayTime){
+            delay += Time.deltaTime;
+        }else if (!paused && delay != 0f){
+            delay = 0f;
+        }
+        if (delay >= delayTime){
+            GetComponent<move>().enabled = true;
+        }
         if (Input.GetKeyDown(KeyCode.Escape) && !paused && !unpausedYet){
             FakePauseMenu();
         }
-        if (paused && !unpausedYet && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.Space))){
+        if (paused && !unpausedYet && (Input.GetAxisRaw("Horizontal") != 0f || Input.GetAxisRaw("Vertical") != 0f || Input.GetKeyDown(KeyCode.Space)) && delay >= delayTime){
             UnlockControls();
         }
     }
@@ -41,6 +51,7 @@ public class FakePause : MonoBehaviour
         GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
         transform.GetChild(0).GetComponent<Camera>().orthographic = true;
         transform.GetChild(0).GetComponent<CameraFollow>().enabled = false;
+        GetComponent<move>().enabled = false;
         PauseButton.transform.GetChild(0).gameObject.SetActive(true);
         MenuButton.transform.GetChild(0).gameObject.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
@@ -53,6 +64,7 @@ public class FakePause : MonoBehaviour
     void UnlockControls(){
         unpausedYet = true;
         transform.position = new Vector3(0,0,2.225f);
+        GetComponent<move>().enabled = true;
         transform.GetChild(0).GetComponent<CameraFollow>().enabled = true;
         transform.GetChild(0).GetComponent<CameraFollow>().xRotation = 0;
         transform.GetChild(0).GetComponent<Camera>().orthographic = false;
@@ -70,6 +82,7 @@ public class FakePause : MonoBehaviour
         transform.position = prevPos;
         transform.localRotation = prevRot;
         GetComponent<Rigidbody>().velocity = prevVel;
+        GetComponent<move>().enabled = true;
         transform.GetChild(0).localRotation = prevCRot;
         transform.GetChild(0).GetComponent<CameraFollow>().enabled = true;
         transform.GetChild(0).GetComponent<Camera>().orthographic = false;
