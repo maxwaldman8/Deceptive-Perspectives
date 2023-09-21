@@ -37,12 +37,10 @@ public class GameManager : MonoBehaviour
 
     public void Save()
     {
-        Debug.Log("ahoy");
         PlayerPrefs.SetString("CurrentItem", Inventory.GetComponent<Inventory>().currentItem);
         PlayerPrefs.SetString("FakePauseMenu", (Player.GetComponent<FakePause>().unpausedYet && FakePauseMenu.activeSelf).ToString());
         PlayerPrefs.SetString("FakeMainMenu", FakeMainMenu.activeSelf.ToString());
         PlayerPrefs.SetString("HiddenKey", (!HiddenKey.GetComponent<ItemHolder>().hasItem).ToString());
-        Debug.Log("hi");
     }
 
     public void Load()
