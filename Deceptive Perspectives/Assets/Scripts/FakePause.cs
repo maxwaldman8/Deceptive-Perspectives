@@ -31,14 +31,15 @@ public class FakePause : MonoBehaviour
         if (delay >= delayTime){
             GetComponent<move>().enabled = true;
         }
-        if (paused && Input.GetKeyDown(KeyCode.Escape)){
-            Unpause();
-        }
         if (Input.GetKeyDown(KeyCode.Escape) && !paused && !unpausedYet){
             FakePauseMenu();
+            return;
         }
         if (paused && !unpausedYet && (Input.GetAxisRaw("Horizontal") != 0f || Input.GetAxisRaw("Vertical") != 0f || Input.GetKeyDown(KeyCode.Space)) && delay >= delayTime){
             UnlockControls();
+        }
+        if (paused && Input.GetKeyDown(KeyCode.Escape)){
+            Unpause();
         }
     }
 
