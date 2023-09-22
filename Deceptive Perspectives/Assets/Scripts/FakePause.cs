@@ -73,6 +73,7 @@ public class FakePause : MonoBehaviour
         MenuButton.transform.GetChild(0).gameObject.SetActive(false);
         Cursor.visible = false;
         MenuButton.GetComponent<InteractableObject>().active = true;
+        PauseButton.GetComponent<InteractableObject>().active = true;
         overlay.SetActive(true);
         //enable inventory
     }
