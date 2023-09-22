@@ -31,6 +31,9 @@ public class FakePause : MonoBehaviour
         if (delay >= delayTime){
             GetComponent<move>().enabled = true;
         }
+        if (paused && Input.GetKeyDown(KeyCode.Escape)){
+            Unpause();
+        }
         if (Input.GetKeyDown(KeyCode.Escape) && !paused && !unpausedYet){
             FakePauseMenu();
         }
