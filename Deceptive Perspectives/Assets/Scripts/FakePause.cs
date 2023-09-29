@@ -67,6 +67,7 @@ public class FakePause : MonoBehaviour
 
     void UnlockControls(){
         unpausedYet = true;
+        paused = false;
         transform.position = new Vector3(0,0,2.225f);
         GetComponent<move>().enabled = true;
         transform.GetChild(0).GetComponent<CameraFollow>().enabled = true;
