@@ -15,6 +15,9 @@ public class ItemHolder : MonoBehaviour
     // set to nothing for not usable
     [field: SerializeField]
     private UnityEvent action;
+    // set to true if it is just for an action and does not hold an item
+    [field: SerializeField]
+    private bool isAction = false;
 
     void Update()
     {
@@ -23,10 +26,10 @@ public class ItemHolder : MonoBehaviour
 
     public string Interact (string heldItem)
     {
-        if (heldItem == ""){
+        if (heldItem == "" && !isAction && hasItem){
             hasItem = false;
             return item;
-        }else if (heldItem == item){
+        }else if (heldItem == item && !isAction){
             hasItem = true;
             return "";
         }else if (hasItem && heldItem == neededItem){
