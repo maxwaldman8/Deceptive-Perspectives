@@ -286,6 +286,79 @@ MonoBehaviour:
   MenuButton: {fileID: 1793977440}
   PauseButton: {fileID: 697264903}
   overlay: {fileID: 1242856098}
+--- !u!1001 &98582286
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2589337275719388800, guid: ea27b7cda9ed618409ae91076759a8ac, type: 3}
+      propertyPath: wait
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589337275719388800, guid: ea27b7cda9ed618409ae91076759a8ac, type: 3}
+      propertyPath: SceneName
+      value: MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589337275719388801, guid: ea27b7cda9ed618409ae91076759a8ac, type: 3}
+      propertyPath: m_Name
+      value: SceneManager 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589337275719388803, guid: ea27b7cda9ed618409ae91076759a8ac, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589337275719388803, guid: ea27b7cda9ed618409ae91076759a8ac, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 704.37524
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589337275719388803, guid: ea27b7cda9ed618409ae91076759a8ac, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 511.73163
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589337275719388803, guid: ea27b7cda9ed618409ae91076759a8ac, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12.246577
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589337275719388803, guid: ea27b7cda9ed618409ae91076759a8ac, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589337275719388803, guid: ea27b7cda9ed618409ae91076759a8ac, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589337275719388803, guid: ea27b7cda9ed618409ae91076759a8ac, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589337275719388803, guid: ea27b7cda9ed618409ae91076759a8ac, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589337275719388803, guid: ea27b7cda9ed618409ae91076759a8ac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589337275719388803, guid: ea27b7cda9ed618409ae91076759a8ac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589337275719388803, guid: ea27b7cda9ed618409ae91076759a8ac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7036948668075759205, guid: ea27b7cda9ed618409ae91076759a8ac, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a35cd5097314d7f458dfc80112a62a00, type: 2}
+    - target: {fileID: 9056390443762759166, guid: ea27b7cda9ed618409ae91076759a8ac, type: 3}
+      propertyPath: m_Name
+      value: Canvas1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea27b7cda9ed618409ae91076759a8ac, type: 3}
 --- !u!1 &106419122
 GameObject:
   m_ObjectHideFlags: 0
