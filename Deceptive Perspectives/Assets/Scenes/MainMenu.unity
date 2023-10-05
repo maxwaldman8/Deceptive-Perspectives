@@ -793,6 +793,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2329943035490192599, guid: ea27b7cda9ed618409ae91076759a8ac, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 519420031}
+    - target: {fileID: 2329943035490192599, guid: ea27b7cda9ed618409ae91076759a8ac, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2329943035490192599, guid: ea27b7cda9ed618409ae91076759a8ac, type: 3}
+      propertyPath: m_PixelPerfect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2329943035490192599, guid: ea27b7cda9ed618409ae91076759a8ac, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 99
+      objectReference: {fileID: 0}
     - target: {fileID: 2589337275719388800, guid: ea27b7cda9ed618409ae91076759a8ac, type: 3}
       propertyPath: wait
       value: 1.5
