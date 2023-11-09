@@ -6,6 +6,9 @@ public class KeyholeAnimationController : MonoBehaviour
 {
     public Animator animator;
     public GameObject gameObject;
+
+    public Rigidbody floorRigidBody;
+
     public void StartAnimation()
     {
         animator.SetTrigger("Start");
@@ -13,7 +16,10 @@ public class KeyholeAnimationController : MonoBehaviour
 
     public void End()
     {
+
         gameObject.SetActive(false);
+        floorRigidBody.isKinematic = false;
+
     }
 
 }
