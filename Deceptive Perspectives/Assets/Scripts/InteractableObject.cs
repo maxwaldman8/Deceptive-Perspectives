@@ -12,8 +12,7 @@ public class InteractableObject : MonoBehaviour
 
     void OnMouseUpAsButton(){
         if (active){
-        Event.Invoke();
-        Debug.Log("event");
+            Event.Invoke();
         }
     }
 
