@@ -16,6 +16,8 @@ public class Inventory : MonoBehaviour
     [field: SerializeField]
     private Sprite Hole;
     [field: SerializeField]
+    private Sprite Y;
+    [field: SerializeField]
     private Sprite HardHat;
 
     [field: SerializeField]
@@ -53,6 +55,10 @@ public class Inventory : MonoBehaviour
             case "Hole":
                 image.sprite = Hole;
                 description.text = "Hole";
+                break;
+            case "Y":
+                image.sprite = Y;
+                description.text = "Y";
                 break;
             case "HardHat":
                 image.sprite = HardHat;

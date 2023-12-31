@@ -21,7 +21,9 @@ public class ItemHolder : MonoBehaviour
 
     void Update()
     {
-        image.enabled = hasItem;
+        if (!isAction) {
+            image.enabled = hasItem;
+        }
     }
 
     public string Interact (string heldItem)
