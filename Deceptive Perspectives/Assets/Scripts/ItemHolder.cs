@@ -8,8 +8,14 @@ public class ItemHolder : MonoBehaviour
     public string item;
     public bool hasItem;
 
+    public bool is2d = true;
+
     [field: SerializeField]
     private Image image;
+
+    [field: SerializeField]
+    private MeshRenderer meshRenderer;
+
     [field: SerializeField]
     private string neededItem;
     // set to nothing for not usable
@@ -22,7 +28,11 @@ public class ItemHolder : MonoBehaviour
     void Update()
     {
         if (!isAction) {
+            if(is2d){
             image.enabled = hasItem;
+            }else{
+            meshRenderer.enabled = hasItem;
+            }
         }
     }
 
