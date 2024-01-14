@@ -28,10 +28,10 @@ public class ItemHolder : MonoBehaviour
     void Update()
     {
         if (!isAction) {
-            if(is2d){
-            image.enabled = hasItem;
-            }else{
-            meshRenderer.enabled = hasItem;
+            if (is2d) {
+                image.enabled = hasItem;
+            } else {
+                meshRenderer.enabled = hasItem;
             }
         }
     }
