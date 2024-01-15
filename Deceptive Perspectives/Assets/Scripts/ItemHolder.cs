@@ -8,10 +8,14 @@ public class ItemHolder : MonoBehaviour
     public string item;
     public bool hasItem;
 
-    public bool is2d = true;
+    public string Type;
+
 
     [field: SerializeField]
     private Image image;
+
+    [field: SerializeField]
+    private GameObject gameObject;
 
     [field: SerializeField]
     private MeshRenderer meshRenderer;
@@ -28,10 +32,14 @@ public class ItemHolder : MonoBehaviour
     void Update()
     {
         if (!isAction) {
-            if (is2d) {
+            if (Type == "Image") {
                 image.enabled = hasItem;
-            } else {
+            } else if (Type == "Mesh") {
                 meshRenderer.enabled = hasItem;
+            } else if (Type == "Object") {
+                //be carful, this will not work if the game object input is the game object with this script,
+                // as the script will stop running and you will not be able to put the item back. 
+                gameObject.SetActive(hasItem);
             }
         }
     }
