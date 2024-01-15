@@ -44,7 +44,7 @@ public class ItemHolder : MonoBehaviour
         }
     }
 
-    public string Interact (string heldItem)
+    public string Interact(string heldItem)
     {
         if (heldItem == "" && !isAction && hasItem){
             hasItem = false;
