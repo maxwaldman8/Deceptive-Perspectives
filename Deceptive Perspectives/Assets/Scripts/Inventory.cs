@@ -21,6 +21,8 @@ public class Inventory : MonoBehaviour
     private Sprite HardHat;
     [field: SerializeField]
     private Sprite KeyCard;
+    [field: SerializeField]
+    private Sprite Phone;
 
     [field: SerializeField]
     private TMP_Text description;
@@ -69,6 +71,10 @@ public class Inventory : MonoBehaviour
             case "KeyCard":
                 image.sprite = KeyCard;
                 description.text = "Key Card";
+                break;
+            case "Phone":
+                image.sprite = Phone;
+                description.text = "Phone";
                 break;
         }
     }
