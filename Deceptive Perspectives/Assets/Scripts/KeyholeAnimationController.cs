@@ -4,7 +4,6 @@ using UnityEngine.Events;
 public class KeyholeAnimationController : MonoBehaviour
 {
     public Animator animator;
-    public GameObject gameObject;
     public UnityEvent endEvent;
     public GameObject playButton;
 
